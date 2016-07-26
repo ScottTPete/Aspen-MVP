@@ -1,5 +1,5 @@
 angular.module('AspenApp')
-  .controller('listingCtrl', function() {
+  .controller('listingCtrl', function(listingSvc) {
 
 
 
