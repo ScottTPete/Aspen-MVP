@@ -1,10 +1,12 @@
 * {
   box-sizing: border-box;
+  font-family: 'Fira Sans', sans-serif;
 }
 
 button:focus {
 	outline: 0;
 }
+
 
 .listing-header {
   height: 25vh;
@@ -54,9 +56,76 @@ button:focus {
 }
 
 .listings-cont {
-  display: flex;
   width: 100vw;
   margin-top: 2vh;
   border: 1px solid red;
   overflow: scroll;
 }
+
+.listing {
+  display: flex;
+  height: 20vh;
+  overflow: hidden;
+}
+
+.listing-left-cont {
+  height: 100%;
+  width: 30vw;
+  margin-right: 2vw;
+}
+
+.headshot-cont {
+  height: 10vh;
+	width: 70px;
+	display: block;
+	margin: 1vh 0 1vh 1vw;
+	border-radius: 50%;
+	border: 1px solid #cccfd0;
+	overflow: hidden;
+	position: relative;
+}
+
+.headshot {
+  height: 100%;
+	left: 0;
+	position: absolute;
+	top: 0;
+	/*	width: 260px;*/
+	/*	object-fit: contain;*/
+	width: 100%;
+}
+
+.name {
+  margin: 0 0 1vw 1vw;
+}
+
+.cost {
+  margin-left: 1vw;
+}
+
+.listing-right-cont {
+  width: 70vw;
+  padding: 1vh 1vw 1vh 0;
+  height: 100%;
+}
+.listing-title-cont {
+  width: 100%;
+  margin-bottom: 1vw;
+  height: 3vh;
+}
+.listing-title {
+  font-weight: 600;
+  font-size: 3vh;
+}
+
+.desc-cont {
+  height: 9.8vh;
+}
+
+.contact-info-cont {
+  display: flex;
+  margin: 1vw 1vw 3vw 0;
+  justify-content: space-between;
+}
+
+
