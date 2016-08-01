@@ -59,7 +59,7 @@ button:focus {
   width: 100vw;
   margin-top: 2vh;
   border: 1px solid red;
-  overflow: scroll;
+  overflow: hidden;
 }
 
 .listing {
@@ -107,6 +107,7 @@ button:focus {
   width: 70vw;
   padding: 1vh 1vw 1vh 0;
   height: 100%;
+  overflow: hidden;
 }
 .listing-title-cont {
   width: 100%;
