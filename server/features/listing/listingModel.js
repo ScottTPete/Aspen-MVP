@@ -1,5 +1,4 @@
 var mongoose = require('mongoose')
-	, CommentSchema = require('../comments/commentSchema')
 	, Schema = mongoose.Schema;
 
 var ListingSchema = new Schema({
@@ -13,7 +12,10 @@ var ListingSchema = new Schema({
 	, headshot: {
 		type: String
  }
-	, comments: [CommentSchema]
+	, comments: [{
+    type: Schema.Types.ObjectId,
+    ref: 'Comment'
+  }]
 	, name: {
 		name: String,
     default: ''

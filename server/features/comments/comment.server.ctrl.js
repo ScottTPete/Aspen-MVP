@@ -25,7 +25,7 @@ module.exports = {
         });
     },
     getComments: (req, res) => {
-        Comment.find(req.query).populate().exec((err, comments) => {
+        Comment.find(req.query, (err, comments) => {
             if (err) {
                 res.status(500).send(err);
             } else {
@@ -51,11 +51,11 @@ module.exports = {
                     $pull: {
                         'comments': comment._id
                     }
-                }, (err, event) => {
+                }, (err, listing) => {
                     if (err) {
                         res.status(500).send(err);
                     }
-                    res.status(200).send(event);
+                    res.status(200).send(listing);
                 });
             }
         });
