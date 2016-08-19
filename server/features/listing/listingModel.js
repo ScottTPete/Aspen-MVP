@@ -1,29 +1,29 @@
-var mongoose = require('mongoose')
-	, Schema = mongoose.Schema;
+var mongoose = require('mongoose'),
+  Schema = mongoose.Schema;
 
 var ListingSchema = new Schema({
-	description: {
-		type: String
-		, default: ''
-	},
+  description: {
+    type: String,
+    default: ''
+  },
   title: {
     title: String
-  }
-	, headshot: {
-		type: String
- }
-	, comments: [{
+  },
+  headshot: {
+    type: String
+  },
+  comments: [{
     type: Schema.Types.ObjectId,
     ref: 'Comment'
-  }]
-	, name: {
-		name: String,
+  }],
+  name: {
+    name: String,
+    default: '',
+  },
+  location: {
+    type: String,
     default: ''
-	, }
-	, location: {
-		type: String
-		, default: ''
-	},
+  },
   email: {
     type: String
   },
@@ -31,7 +31,7 @@ var ListingSchema = new Schema({
     number: Number
   }
 }, {
-	timestamps: true
-, });
+  timestamps: true,
+});
 
-module.exports = mongoose.model('Photo', ListingSchema);
+module.exports = mongoose.model('Listing', ListingSchema);

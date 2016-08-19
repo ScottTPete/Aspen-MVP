@@ -4,12 +4,19 @@ angular.module('AspenApp', ['ui.router'])
 
   $urlRouterProvider.otherwise('/');
 
-   $stateProvider
+  $stateProvider
     .state('home', {
       url: '/',
       templateUrl: 'features/listings/listingsView.html',
       caseInsenstive: true,
-      controller: 'listingCtrl'
+      controller: 'listingCtrl',
+      resolve: {
+        listings: function (listingSvc) {
+          return listingSvc.getListings().then(function (response) {
+            return response
+          })
+        }
+      }
     })
 
   $locationProvider.html5Mode(true);

@@ -9,10 +9,10 @@ require('./features/comments/comments.server.routes')(app); //users
 
 //Necessary to allow refresh/navigation in html5mode(true)//
 app.all('*', function (req, res, next) {
-	// Just send the index.html for other files to support HTML5Mode
-	res.sendFile('../public/index.html', {
-		root: __dirname
-	});
+  // Just send the index.html for other files to support HTML5Mode
+  res.sendFile('../public/index.html', {
+    root: __dirname
+  });
 
 });
 
@@ -20,5 +20,5 @@ app.all('*', function (req, res, next) {
 var port = 8080;
 
 app.listen(port, function () {
-	console.log('Listening on port ' + port);
+  console.log('Listening on port ' + port);
 });

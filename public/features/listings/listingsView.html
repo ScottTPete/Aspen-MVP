@@ -5,32 +5,34 @@
 </div>
 
 <div class='listing-btn-cont'>
-  <button class='listing-btn'>Post A Listing</button>
+  <button class='listing-btn' ng-click="openNewModal()">Post A Listing</button>
 
 </div>
 
 <div class='listings-cont'>
-  <div class='listing'>
+  <div class='listing' ng-repeat="listing in listings">
 
     <div class='listing-left-cont'>
       <div class='headshot-cont'>
-        <img class='headshot' src='https://www.drupal.org/files/profile_default.jpg' />
+        <img class='headshot' ng-src='{{listing.headshot}}' />
       </div>
-      <h3 class='name'>John Doe</h3>
-      <h3 class='cost'>$Monopoly</h3>
+      <h3 class='name'>{{listing.name}}</h3>
+      <h3 class='cost'>${{listing.cost}}</h3>
     </div>
     <div class='listing-right-cont'>
       <div class='listing-title-cont'>
-        <h2 class='listing-title'>Fake Listing - Category</h2>
+        <h2 class='listing-title'>{{listing.title}} - {{listing.category}}</h2>
       </div>
       <div class='desc-cont'>
-        <p class='listing-desc'> This is my fake listing</p>
+        <p class='listing-desc'>{{listing.description}}</p>
       </div>
       <div class='contact-info-cont'>
-        <p class='email'>filler</p>
-        <p class='phone-num'>999-999-9999</p>
+        <p class='email'>{{listing.email}}</p>
+        <p class='phone-num'>{{listing.number}}</p>
       </div>
 
     </div>
   </div>
 </div>
+
+<new-listing></new-lisiting>
