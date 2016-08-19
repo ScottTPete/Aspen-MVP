@@ -2,6 +2,33 @@
   <div ng-click="closeModal()" class="overlay"></div>
   <div class="modal__contents modal--transition">
     <a class="modal__close" href="#" ng-click="closeModal()">X</a>
-    <h1>Resize the window, dawg</h1>
+    <div class='newListing-cont'>
+      <h3>Headshot:</h3>
+      <input type="text" ng-model="listing.headshot" placeholder="Enter a URL">
+      <br>
+      <h3>Name:</h3>
+      <input type="text" ng-model="listing.name" placeholder="Enter your Name">
+      <br>
+      <h3>Email:</h3>
+      <input type="text" ng-model="listing.email" placeholder="Enter your email">
+      <br>
+      <h3>Phone Number:</h3>
+      <input type="number" ng-model="listing.number" placeholder="Enter your phone number">
+      <br>
+      <select ng-model="listing.category" ng-options="cat for cat in categories"></select>
+      <h3>Title:</h3>
+      <input type="text" ng-model="listing.title" placeholder="Enter a title for your listing">
+      <br>
+      <h3>Description:</h3>
+      <input type="text" ng-model="listing.description" placeholder="Enter a description for your listing">
+      <br>
+      <h3>Address:</h3>
+      <input type="text" ng-model="listing.location" placeholder="Enter a description for your listing">
+      <h3>Cost:</h3>
+      <input type="number" ng-model="listing.cost" placeholder="$">
+      <br>
+      <button ng-click="closeModal()">Cancel</button>
+      <button type="submit" ng-click="postListing(listing)">Submit</button>
+    </div>
   </div>
 </div>

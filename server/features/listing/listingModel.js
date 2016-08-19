@@ -10,7 +10,8 @@ var ListingSchema = new Schema({
     title: String
   },
   headshot: {
-    type: String
+    type: String,
+    default: 'https://www.drupal.org/files/profile_default.jpg'
   },
   comments: [{
     type: Schema.Types.ObjectId,
@@ -29,6 +30,10 @@ var ListingSchema = new Schema({
   },
   number: {
     number: Number
+  },
+  category: {
+    type: String,
+    enum: ["Baseball", "Football", "Lacrosse", "Basketball", "Lifting", "Sprints", "Tennis", "Golf", "Hockey", "Soccer", "Volleyball", "Boxing", "MMA", "Softball", "Swimming"]
   }
 }, {
   timestamps: true,

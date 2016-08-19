@@ -1,8 +1,14 @@
 angular.module('AspenApp')
   .service('listingSvc', function ($http) {
 
+    let categorgies = ["Baseball", "Football", "Lacrosse", "Basketball", "Lifting", "Sprints", "Tennis", "Golf", "Hockey", "Soccer", "Volleyball", "Boxing", "MMA", "Softball", "Swimming"];
+
+    this.getCategories = function () {
+      return categorgies;
+    }
 
     this.postListing = function (listing) {
+      console.log(listing)
       return $http.post('/api/v1/listing', listing);
     };
 
